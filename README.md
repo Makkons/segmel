@@ -1,7 +1,7 @@
 # Gulp — сборка MaxGraph
 
 > Используется Gulp 5. Тестировалось на node.js 20.12.2<br>
-> DEMO:
+> DEMO: https://makkons.github.io/segmel/
 
 ## Начало работы
 
