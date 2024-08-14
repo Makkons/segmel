@@ -1,12 +1,25 @@
-// если вы хотите использовать sass-переменные - удалите root
+
 // colors
 :root {
   // base
-  --font-family: "Open Sans", sans-serif;
-  --content-width: 1170px;
-  --container-offset: 15px;
+  --font-family: "Onest", sans-serif;
+  --content-width: calc(1170 / 16 * 1rem);
+  --container-offset: calc(35 / 16 * 1rem);
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
 
   // colors
-  --light-color: #fff;
+  --dark-bg-color: #1D1B1F;
+  --light-bg-color: #E7ECF9;
+  --accent-bg-color: #D9E1F8;
+  --dark-text-color: #1A1A1A;
+  --light-text-color: #F3F6FF;
+  --accent-text-color: #335FFF;
+  --dark-line-color: rgba(51, 95, 255, 0.3);
+  --light-line-color: #8A859F;
+  --card-color: #242128;
+
+
+  @include small-tablet {
+    --container-offset: calc(15 / 16 * 1rem);
+  }
 }

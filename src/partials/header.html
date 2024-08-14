@@ -1,3 +1,41 @@
-<header class="header">
-  <div class="container"></div>
+<header class="header" data-menu>
+  <div class="header__container container">
+    <div class="header__wrapper container__slim">
+      <a class="header__logo logo" href="#">
+        <svg width="157" height="27">
+          <use xlink:href="img/sprite.svg#logo"></use>
+        </svg>
+      </a>
+      <div class="header__bar">
+        <button type="button" class="header__button button button--min button--light">Войти</button>
+        <button class="header__burger burger" aria-label="Открыть меню" aria-expanded="false" data-burger>
+          <span class="burger__line"></span>
+        </button>
+      </div>
+      <nav class="header__nav nav">
+        <div class="nav__container container bg-line-top">
+          <div class="nav__wrapper container__slim">
+            <ul class="nav__list list-reset">
+              <li class="nav__item">
+                <a href="#" class="nav__link">Продукт</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Кейсы</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Как это работает</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Тарифы</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Блог</a>
+              </li>
+            </ul>
+            <button type="button" class="header__button button button--min">Войти</button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
 </header>

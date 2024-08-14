@@ -1,28 +1,40 @@
 /* stylelint-disable */
 
 @mixin burger {
-  --burger-width: 30px;
-  --burger-height: 30px;
-  --burger-line-height: 2px;
-
+  --burger-width: 83px;
+  --burger-height: 31px;
+  --burger-line-height: 5px;
   position: relative;
   border: none;
   padding: 0;
   width: var(--burger-width);
   height: var(--burger-height);
-  color: #000;
-  background-color: transparent;
+  color: var(--light-line-color);
+  background: transparent;
   cursor: pointer;
+  @media (any-hover: hover) {
+    &:hover:not(.burger--active) {
+      //color: var(--accent-text-color);
+      &::before,
+      &::after {
+        transform: translateX(calc(-50%));
+      }
+    }
+  }
 
   &::before,
   &::after {
     content: "";
     position: absolute;
-    left: 0;
+    left: 50%;
     width: 100%;
     height: var(--burger-line-height);
-    background-color: currentColor;
-    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+    background: currentColor;
+    transform: translateX(calc(-50% + rem(-10)));
+    transition: all 0.3s ease-in-out;
+    @include small-tablet {
+      //transform: translateX(rem(-7));
+    }
   }
 
   &::before {
@@ -39,27 +51,40 @@
     top: 50%;
     width: 100%;
     height: var(--burger-line-height);
-    background-color: currentColor;
-    transform: translateY(-50%);
-    transition: transform 0.3s ease-in-out;
+    background: currentColor;
+    transform: scale(1) translateY(-50%);
+    transition: all 0.3s ease-in-out;
   }
 
   &--active {
-    &::before {
+    &::before, &::after {
+      width: rem(17);
+      height: rem(1.5);
       top: 50%;
+      left: calc(50% - rem(10));
+      color: var(--accent-text-color);
+      //transition: none;
+      @include small-tablet {
+        left: calc(50% - rem(7));
+      }
+    }
+    &::before {
       transform: rotate(45deg);
-      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
     }
 
     &::after {
-      top: 50%;
       transform: rotate(-45deg);
-      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
     }
 
     .burger__line {
-      transform: scale(0);
-      transition: transform 0.3s ease-in-out;
+      transform: scale(0) translateY(-50%);
+      color: var(--accent-text-color);
+      transition: all 0.3s ease-in-out;
     }
+  }
+  @include small-tablet {
+    --burger-width: 62px;
+    --burger-height: 23px;
+    --burger-line-height: 4px;
   }
 }
