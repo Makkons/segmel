@@ -1,3 +1,12 @@
+
+:root {
+  --swiper-theme-color: var(--accent-text-color);
+  --swiper-pagination-bullet-inactive-color: #c6cad6;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+  --swiper-pagination-bullet-size: calc(6 / 16 * 1rem);
+  --swiper-pagination-bullet-horizontal-gap: calc(3 / 16 * 1rem);
+}
+
 .button {
   display: inline-block;
   font-size: rem(16);
@@ -59,13 +68,13 @@
 }
 
 .heading {
+  padding: rem(80) 0;
+  max-width: rem(920);
+}
+
+.title {
   margin: 0;
   font-weight: 600;
-  font-size: rem(58);
-  line-height: 90%;
-  color: var(--light-text-color);
-  max-width: rem(620);
-  // .heading__gradient
   &__gradient {
     background: linear-gradient(90deg, var(--light-text-color) 0%, var(--accent-text-color) 34%);
     background-clip: text;
@@ -74,11 +83,50 @@
   }
 }
 
-.title {
+h1.title {
+  font-size: rem(58);
+  line-height: 90%;
+  color: var(--light-text-color);
+  max-width: rem(620);
+}
 
+h2.title {
+  font-size: rem(48);
+  line-height: 108%;
+  color: var(--dark-text-color);
+  // .title__accent
+  .title__accent {
+    color: var(--accent-text-color);
+  }
+  &:not(:last-child) {
+    margin-bottom: rem(15);
+  }
+}
+
+h3.title {
+  font-size: rem(32);
+  line-height: 100%;
+  color: var(--dark-text-color);
+  &:not(:last-child) {
+    margin-bottom: rem(16);
+  }
+}
+
+.subtitle {
+  margin: 0;
+  font-size: rem(20);
+  line-height: 130%;
+  color: var(--dark-text-color);
+  &:not(:last-child) {
+      margin-bottom: rem(10);
+  }
 }
 
 .text {
+  margin: 0;
+  font-size: rem(16);
+  line-height: 130%;
+  color: var(--dark-text-color);
 }
 
 .link {
@@ -111,6 +159,7 @@
 }
 
 .bg-line {
+  overflow: hidden;
   &-top,
   &-bottom {
     position: relative;
@@ -120,7 +169,7 @@
       left: -100vw;
       width: 200vw;
       height: rem(1);
-      border-bottom: rem(1) solid var(--dark-line-color);
+      border-bottom: rem(1) solid var(--light-line-color);
       pointer-events: none;
     }
   }
@@ -134,14 +183,6 @@
       bottom: 0;
     }
   }
-}
-
-:root {
-  --swiper-theme-color: var(--accent-text-color);
-  --swiper-pagination-bullet-inactive-color: #c6cad6;
-  --swiper-pagination-bullet-inactive-opacity: 1;
-  --swiper-pagination-bullet-size: calc(6 / 16 * 1rem);
-  --swiper-pagination-bullet-horizontal-gap: calc(3 / 16 * 1rem);
 }
 
 .swiper {

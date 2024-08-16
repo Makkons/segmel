@@ -7,6 +7,7 @@ export const enableScroll = () => {
   fixBlocks.forEach(el => { el.style.paddingRight = '0px'; });
   vars.bodyEl.style.paddingRight = '0px';
 
+  vars.htmlEl.style.scrollBehavior = 'auto';
   vars.bodyEl.style.top = 'auto';
   vars.bodyEl.classList.remove('dis-scroll');
   window.scroll({
@@ -14,5 +15,4 @@ export const enableScroll = () => {
     left: 0
   });
   vars.bodyEl.removeAttribute('data-position');
-  vars.htmlEl.style.scrollBehavior = 'smooth';
 }

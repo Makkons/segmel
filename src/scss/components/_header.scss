@@ -1,5 +1,6 @@
 .header {
   position: fixed;
+  top: 0;
   width: 100%;
   background: var(--dark-bg-color);
   color: var(--light-text-color);
@@ -26,9 +27,6 @@
 
   &__container {
     position: relative;
-    width: 100%;
-    display: flex;
-    align-items: center;
   }
   &__wrapper {
     width: 100%;
@@ -81,13 +79,13 @@
     right: calc(var(--burger-width) * -1);
     @include big-desktop {
       position: relative;
-      right: calc(var(--burger-width) * -1 + rem(20));
-    }
-    @include tablet {
       right: calc(var(--burger-width) * -1 + rem(30));
     }
+    @include tablet {
+      right: calc(var(--burger-width) * -1 + rem(40));
+    }
     @include small-tablet {
-      right: rem(-15);
+      right: rem(-5);
     }
   }
 
@@ -124,15 +122,19 @@
 
   &__container {
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     //border-top: 1px solid rgba(138, 133, 159, 0.4);
     &::after {
       top: rem(-1);
       border-bottom: rem(1) solid rgba(138, 133, 159, 0.4);
       z-index: 100;
     }
+  }
+
+  &__wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   // .nav__list
