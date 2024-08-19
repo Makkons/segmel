@@ -3,6 +3,7 @@ import webpackStream from 'webpack-stream';
 import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
 
+
 export const scripts = () => {
   return app.gulp.src(app.paths.srcMainJs)
     .pipe(plumber(

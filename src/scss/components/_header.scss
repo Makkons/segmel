@@ -2,13 +2,33 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background: var(--dark-bg-color);
+  background: var(--light-bg-color);
   color: var(--light-text-color);
   height: rem(90);
   display: flex;
   z-index: 100;
+  transition: background 0.3s ease 0s, border-color 0.3s ease 0s;
+  border-bottom: 1px solid var(--light-line-color);
 
-  border-bottom: 1px solid var(--dark-line-color);
+  &--dark:not(.menu--active) {
+    background: var(--dark-bg-color);
+    border-color: var(--accent-line-color);
+    .logo {
+      svg {
+        fill: #ffffff;
+      }
+    }
+    .header__wrapper {
+      border-color: var(--accent-line-color);
+      &.bg-line {
+        &-center {
+          &::before {
+            border-color: var(--accent-line-color);
+          }
+        }
+      }
+    }
+  }
 
   &.menu--active {
     .header__nav {
@@ -34,12 +54,23 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transition: border-color 0.3s ease 0s;
 
     padding-top: rem(20);
     padding-bottom: rem(20);
 
-    border-left: 1px solid var(--dark-line-color);
-    border-right: 1px solid var(--dark-line-color);
+    border-left: 1px solid var(--light-line-color);
+    //border-right: 1px solid var(--light-line-color);
+    &.bg-line-center {
+      &::before {
+        left: auto;
+        right: 0;
+        border-right: 1px solid var(--light-line-color);
+        @include big-desktop {
+          right: rem(110);
+        }
+      }
+    }
   }
 
   // .header__logo
@@ -61,7 +92,7 @@
             margin-right: rem(30);
           }
           @include small-tablet {
-            //margin-right: rem(calc(45 - 23));
+            margin-right: rem(50);
           }
         }
       }
@@ -76,7 +107,7 @@
   // .header__burger
   &__burger {
     position: absolute;
-    right: calc(var(--burger-width) * -1);
+    right: calc(var(--burger-width) * -1 + rem(-23));
     @include big-desktop {
       position: relative;
       right: calc(var(--burger-width) * -1 + rem(30));
@@ -93,6 +124,18 @@
   &__nav {
 
   }
+  .bg-line {
+    &-top {
+      &::before {
+        border-color: var(--accent-line-color);
+      }
+    }
+    &-bottom {
+      &::after {
+        border-color: var(--accent-line-color);
+      }
+    }
+  }
 }
 
 .nav {
@@ -107,6 +150,12 @@
   transition: transform 0.3s ease 0s;
   padding-top: rem(90);
   overflow: hidden;
+
+  .bg-line-top {
+    &::before {
+      transform: none;
+    }
+  }
 
   .button {
     display: none;
@@ -157,6 +206,12 @@
     font-size: rem(16);
     line-height: 150%;
     color: var(--dark-text-color);
+    transition: color 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--light-line-color);
+      }
+    }
   }
 }
 

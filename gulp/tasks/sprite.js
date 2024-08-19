@@ -17,7 +17,7 @@ export const svgSprites = () => {
         run: function ($) {
           $('[fill]').removeAttr('fill');
           $('[stroke]').removeAttr('stroke');
-          $('[style]').removeAttr('style');
+          // $('[style]').removeAttr('style');
         },
         parserOptions: {
           xmlMode: true

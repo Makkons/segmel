@@ -1,10 +1,18 @@
 .offers {
+  background: var(--accent-bg-color);
   overflow: inherit;
+  padding-bottom: rem(80);
+  @include small-tablet {
+    padding-bottom: rem(60);
+  }
   // .offers__container
   &__container {
   }
   // .offers__heading
   &__heading {
+    @include small-tablet {
+      padding: rem(60) 0 rem(40);
+    }
   }
   // .offers__title
   &__title {
@@ -17,6 +25,9 @@
     display: flex;
     align-items: flex-start;
     //height: rem(1200);
+    @media (max-width: rem(800)) {
+      flex-direction: column-reverse;
+    }
   }
   // .offers__list
   &__list {
@@ -24,12 +35,28 @@
     margin-right: rem(30);
     position: sticky;
     top: 0;
+    max-width: rem(570);
+    @media (max-width: rem(800)) {
+      margin-right: 0;
+      max-width: 100%;
+    }
   }
   // .offers__item
   &__item {
-    padding: rem(60) rem(42);
-    max-width: rem(570);
+    padding: rem(60) rem(40);
     border: rem(1) solid var(--light-line-color);
+    position: sticky;
+    top: calc(var(--header-height) * 2);
+    background: var(--accent-bg-color);
+    @include tablet {
+      padding: rem(30);
+    }
+    &:nth-child(2) {
+      top: calc(var(--header-height) * 2 + rem(20));
+    }
+    &:nth-child(3) {
+      top: calc(var(--header-height) * 2 + rem(40));
+    }
     &:not(:last-child) {
         border-bottom: none;
     }
@@ -37,10 +64,16 @@
   // .offers__title
   h3.offers__title {
     max-width: rem(400);
+    @include tablet {
+      max-width: 100%;
+    }
   }
   // .offers__text
   &__text {
     max-width: rem(400);
+    @include tablet {
+      max-width: 100%;
+    }
   }
   //&__picture {
   //  width: 100%;
@@ -50,10 +83,40 @@
   // .offers__image
   &__image {
     position: sticky;
-    top: 0;
+    top: calc(var(--header-height) * 2);
     margin-right: rem(-312);
-    //height: auto;
-    //object-fit: contain;
-    //max-width: rem(882);
+    object-position: left;
+    @media (max-width: rem(1800)) {
+      width: calc((100vw - var(--scroll-bar-width)) * (922 / 1880));
+      height: calc((100vw - var(--scroll-bar-width)) * (750 / 1880));
+      margin-right: calc(((100vw - var(--scroll-bar-width)) - var(--content-width)) / 2 * -1);
+    }
+    @include big-desktop {
+      width: calc((100vw - var(--scroll-bar-width)) * (705 / 1440));
+      height: calc((100vw - var(--scroll-bar-width)) * (623 / 1440));
+    }
+    @media (max-width: rem(1240)) {
+      margin-right: rem(-35);
+    }
+    @include tablet {
+      width: calc((100vw - var(--scroll-bar-width)) * (465 / 960));
+      height: calc((100vw - var(--scroll-bar-width)) * (513 / 960));
+    }
+    @media (max-width: rem(800)) {
+      width: 100%;
+      height: auto;
+      margin-bottom: rem(80);
+      position: static;
+    }
+    @include small-tablet {
+      max-width: 100vw;
+      width: calc(100% + rem(15));
+      height: rem(508);
+      margin-right: rem(-15);
+      margin-bottom: rem(60);
+    }
+    @include mobile {
+      height: rem(400);
+    }
   }
 }

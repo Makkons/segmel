@@ -1,0 +1,133 @@
+.footer {
+  background: var(--dark-bg-color);
+  color: var(--light-text-color);
+  // .footer__container
+  &__container {
+  }
+  // .footer__wrapper
+  &__wrapper {
+    padding-top: rem(80);
+    padding-bottom: rem(40);
+    border-left: 1px solid var(--accent-line-color);
+    border-right: 1px solid var(--accent-line-color);
+    @include small-tablet {
+      padding-top: rem(60);
+      padding-bottom: rem(60);
+    }
+  }
+  // .footer__form
+  &__form {
+    padding: rem(60) 0 rem(60);
+  }
+  // .footer__heading
+  &__heading {
+    padding: 0;
+    margin-bottom: rem(50);
+    @include small-tablet {
+      margin-bottom: rem(40);
+    }
+  }
+  // .footer__title
+  &__title {
+    color: var(--light-text-color);
+    max-width: rem(680);
+  }
+  // .footer__body
+  &__body {
+    padding: rem(80) 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(23);
+    @include small-tablet {
+      padding: rem(60) 0 rem(20);
+      grid-template-columns: repeat(1, 1fr);
+    }
+    > * {
+      align-self: flex-end;
+    }
+  }
+  // .footer__logo
+  &__logo {
+    svg {
+      fill: #ffffff;
+      width: rem(101);
+    }
+  }
+  // .footer__nav
+  &__nav {
+    @include tablet {
+      justify-self: start;
+    }
+    .footer__link {
+      white-space: nowrap;
+    }
+  }
+  // .footer__list
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem(23);
+    @include tablet {
+      grid-template-columns: repeat(3, auto);
+      gap: rem(23) rem(44);
+    }
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+      gap: rem(15);
+    }
+  }
+  // .footer__item
+  &__item {
+  }
+  // .footer__link
+  &__link {
+    font-size: 14px;
+    line-height: 130%;
+    color: var(--light-text-color);
+    transition: color 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--light-line-color);
+      }
+    }
+  }
+  // .footer__bottom
+  &__bottom {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: rem(22) 0;
+    gap: rem(23);
+    @include small-tablet {
+      grid-template-columns: repeat(1, 1fr);
+      padding: rem(60) 0 0;
+      gap: rem(10);
+    }
+    .footer__link,
+    .footer__text {
+      color: var(--light-line-color);
+    }
+    .footer__link {
+      justify-self: end;
+      @include small-tablet {
+        justify-self: start;
+        grid-row: 1/2;
+      }
+    }
+  }
+  // .footer__text
+  &__text {
+  }
+  .bg-line {
+    &-top,
+    &-center {
+      &::before {
+        border-color: var(--accent-line-color);
+      }
+    }
+    &-bottom {
+      &::after {
+        border-color: var(--accent-line-color);
+      }
+    }
+  }
+}

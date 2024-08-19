@@ -14,9 +14,18 @@
   --dark-text-color: #1A1A1A;
   --light-text-color: #F3F6FF;
   --accent-text-color: #335FFF;
-  --dark-line-color: rgba(51, 95, 255, 0.3);
+  --accent-hover-color: #1547E1;
   --light-line-color: #8A859F;
-  --card-color: #242128;
+  --accent-line-color: rgba(51, 95, 255, 0.3);
+  //--card-color: #242128;
+
+
+  --swiper-theme-color: var(--accent-text-color);
+  --swiper-pagination-bullet-inactive-color: #c6cad6;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+  --swiper-pagination-bullet-size: calc(6 / 16 * 1rem);
+  --swiper-pagination-bullet-horizontal-gap: calc(3 / 16 * 1rem);
+  --swiper-navigation-size: calc(35 / 16 * 1rem);
 
 
   @include small-tablet {

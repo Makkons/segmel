@@ -1,26 +1,41 @@
 /* stylelint-disable */
 
-@mixin custom-checkbox {
+@mixin checkbox {
   position: relative;
 
-  &__field {
+  &__input {
     appearance: none;
     position: absolute;
+    &:checked + .checkbox__content::after {
+      opacity: 1;
+    }
+    &:focus + .checkbox__content::before {
+      //outline: rem(1) solid var(--accent-text-color);
+    }
+    &:disabled + .checkbox__content {
+      opacity: 0.4;
+      pointer-events: none;
+    }
   }
 
   &__content {
-    padding-left: 25px;
+    //padding-left: rem(25);
     cursor: pointer;
+    display: flex;
 
     &::before {
       content: "";
-      position: absolute;
+      position: relative;
       left: 0;
       top: 0;
-      border: 1px solid #000;
-      width: 15px;
-      height: 15px;
+      border: none;
+      width: rem(20);
+      height: rem(20);
+      flex-shrink: 0;
       box-sizing: border-box;
+      background: var(--light-text-color);
+      border-radius: rem(5);
+      margin-right: rem(7);
     }
 
     &::after {
@@ -28,29 +43,15 @@
       position: absolute;
       left: 0;
       top: 0;
-      width: 15px;
-      height: 15px;
+      width: rem(20);
+      height: rem(20);
       box-sizing: border-box;
-      background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='fi_32282' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='405.272px' height='405.272px' viewBox='0 0 405.272 405.272' style='enable-background:new 0 0 405.272 405.272;' xml:space='preserve'%3E%3Cg%3E%3Cpath d='M393.401,124.425L179.603,338.208c-15.832,15.835-41.514,15.835-57.361,0L11.878,227.836 c-15.838-15.835-15.838-41.52,0-57.358c15.841-15.841,41.521-15.841,57.355-0.006l81.698,81.699L336.037,67.064 c15.841-15.841,41.523-15.829,57.358,0C409.23,82.902,409.23,108.578,393.401,124.425z'%3E%3C/path%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAxNCAxMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPG1hc2sgaWQ9InBhdGgtMS1pbnNpZGUtMV8yMjFfNTQ2MiIgZmlsbD0id2hpdGUiPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTE0IDAuNzEzMTMzTDUuMDU3NDQgMTBMMCA0Ljc0NzgzTDAuNjg2Njk0IDQuMDM0N0w1LjA1NzQ0IDguNTczNzNMMTMuMzEzMyAwTDE0IDAuNzEzMTMzWiIvPgo8L21hc2s+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTQgMC43MTMxMzNMNS4wNTc0NCAxMEwwIDQuNzQ3ODNMMC42ODY2OTQgNC4wMzQ3TDUuMDU3NDQgOC41NzM3M0wxMy4zMTMzIDBMMTQgMC43MTMxMzNaIiBmaWxsPSIjMzM1RkZGIi8+CjxwYXRoIGQ9Ik0xNCAwLjcxMzEzM0wyMS4yMDMzIDcuNjQ5NDFMMjcuODgyNCAwLjcxMzEzNEwyMS4yMDMzIC02LjIyMzE0TDE0IDAuNzEzMTMzWk01LjA1NzQ0IDEwTC0yLjE0NTg5IDE2LjkzNjNMNS4wNTc0NCAyNC40MTdMMTIuMjYwOCAxNi45MzYzTDUuMDU3NDQgMTBaTTAgNC43NDc4M0wtNy4yMDMzNCAtMi4xODg0NEwtMTMuODgyNSA0Ljc0NzgzTC03LjIwMzM0IDExLjY4NDFMMCA0Ljc0NzgzWk0wLjY4NjY5NCA0LjAzNDdMNy44OTAwMyAtMi45MDE1OEwwLjY4NjY5NSAtMTAuMzgyM0wtNi41MTY2NCAtMi45MDE1OEwwLjY4NjY5NCA0LjAzNDdaTTUuMDU3NDQgOC41NzM3M0wtMi4xNDU5IDE1LjUxTDUuMDU3NDQgMjIuOTkwN0wxMi4yNjA4IDE1LjUxTDUuMDU3NDQgOC41NzM3M1pNMTMuMzEzMyAwTDIwLjUxNjYgLTYuOTM2MjdMMTMuMzEzMyAtMTQuNDE3TDYuMTA5OTcgLTYuOTM2MjdMMTMuMzEzMyAwWk02Ljc5NjY2IC02LjIyMzE0TC0yLjE0NTg5IDMuMDYzNzJMMTIuMjYwOCAxNi45MzYzTDIxLjIwMzMgNy42NDk0MUw2Ljc5NjY2IC02LjIyMzE0Wk0xMi4yNjA4IDMuMDYzNzJMNy4yMDMzNCAtMi4xODg0NEwtNy4yMDMzNCAxMS42ODQxTC0yLjE0NTg5IDE2LjkzNjNMMTIuMjYwOCAzLjA2MzcyWk03LjIwMzM0IDExLjY4NDFMNy44OTAwMyAxMC45NzFMLTYuNTE2NjQgLTIuOTAxNThMLTcuMjAzMzQgLTIuMTg4NDRMNy4yMDMzNCAxMS42ODQxWk0tNi41MTY2NSAxMC45NzFMLTIuMTQ1OSAxNS41MUwxMi4yNjA4IDEuNjM3NDZMNy44OTAwMyAtMi45MDE1OEwtNi41MTY2NSAxMC45NzFaTTEyLjI2MDggMTUuNTFMMjAuNTE2NiA2LjkzNjI3TDYuMTA5OTcgLTYuOTM2MjdMLTIuMTQ1ODkgMS42Mzc0NkwxMi4yNjA4IDE1LjUxWk02LjEwOTk3IDYuOTM2MjdMNi43OTY2NiA3LjY0OTQxTDIxLjIwMzMgLTYuMjIzMTRMMjAuNTE2NiAtNi45MzYyN0w2LjEwOTk3IDYuOTM2MjdaIiBmaWxsPSIjMzM1RkZGIiBtYXNrPSJ1cmwoI3BhdGgtMS1pbnNpZGUtMV8yMjFfNTQ2MikiLz4KPC9zdmc+Cg==");
       background-position: center;
-      background-size: 10px 10px;
+      background-size: rem(14) rem(10);
       background-repeat: no-repeat;
       opacity: 0;
       transition: opacity 0.3s ease-in-out;
     }
   }
-}
-
-.custom-checkbox__field:checked + .custom-checkbox__content::after {
-  opacity: 1;
-}
-
-.custom-checkbox__field:focus + .custom-checkbox__content::before {
-  outline: 2px solid #f00;
-  outline-offset: 2px;
-}
-
-.custom-checkbox__field:disabled + .custom-checkbox__content {
-  opacity: 0.4;
-  pointer-events: none;
 }

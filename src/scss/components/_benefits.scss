@@ -1,4 +1,10 @@
 .benefits {
+  @include tablet {
+    margin-bottom: rem(80);
+  }
+  @include small-tablet {
+    margin-bottom: rem(60);
+  }
   // .benefits__container
   &__container {
   }
@@ -18,6 +24,10 @@
   &__services {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    border-left: rem(1) solid var(--light-line-color);
+    @include small-tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
   // .benefits__name
   &__name {
@@ -27,49 +37,76 @@
     justify-content: center;
     min-height: rem(160);
     padding: rem(30) 0;
+    @include small-tablet {
+      min-height: rem(140);
+    }
+    &:nth-child(1),
+    &:nth-child(2) {
+      @include small-tablet {
+        border-bottom: rem(1) solid var(--light-line-color);
+      }
+    }
     &:first-child {
-      border-left: rem(1) solid var(--light-line-color);
+      //border-left: rem(1) solid var(--light-line-color);
+    }
+    &:not(:last-child) {
+      margin-bottom: 0;
     }
   }
   // .benefits__list
   &__list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    //&.bg-line {
-    //  &-top,
-    //  &-bottom {
-    //    &::after {
-    //      top: rem(-1);
-    //    }
-    //  }
-    //}
+    @include tablet {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
   // .benefits__item
   &__item {
     display: flex;
     padding: rem(70) rem(20) rem(60) 0;
-    &:first-child {
-      border-right: rem(1) solid var(--light-line-color);
+    &.bg-line-bottom {
+      &::after {
+        display: none;
+      }
     }
-    &:last-child {
-      border-left: rem(1) solid var(--light-line-color);
+    @include tablet {
+      padding: rem(50) 0;
+      &.bg-line-bottom {
+        &::after {
+          display: block;
+        }
+      }
+    }
+    @include small-tablet {
+      padding: rem(30) 0;
+    }
+    &:nth-child(odd) {
+      border-right: rem(1) solid var(--light-line-color);
+      @include tablet {
+        border-right: 0;
+      }
     }
     &:nth-child(even) {
       padding-left: rem(43);
+      @include tablet {
+        padding-left: 0;
+      }
     }
+    //&:last-child {
+    //  &.bg-line-bottom {
+    //    &:after {
+    //      transform: translateX(-100%);
+    //    }
+    //  }
+    //}
   }
-  // .benefits__icon
-  &__icon {
-    flex-shrink: 0;
-    font-size: rem(56);
-    height: rem(102);
-    width: rem(102);
+  // .benefits__emoji
+  &__emoji {
     margin-right: rem(25);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: rem(1) solid var(--light-line-color);
-    border-radius: 50%;
+    @include tablet {
+      margin-right: rem(20);
+    }
   }
   // .benefits__content
   &__content {
