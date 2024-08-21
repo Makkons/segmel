@@ -42,7 +42,7 @@ if (swiperSelectors.length > 0) {
     });
     const clientsSwiper = new Swiper('.clients__swiper', {
         slidesPerView: 1,
-        slidesPerGroup: 2,
+        slidesPerGroup: 1,
         spaceBetween: 0,
         loop: true,
         navigation: {
@@ -56,6 +56,7 @@ if (swiperSelectors.length > 0) {
         breakpoints: {
             800: {
                 slidesPerView: 2,
+                slidesPerGroup: 2,
             }
         }
     });
