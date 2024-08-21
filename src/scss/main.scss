@@ -4,7 +4,7 @@
 @import "fonts";
 @import "settings";
 
-// подключения компонентов страницы
+// подключения компонентов страницы Главная
 @import "./components/ui";
 @import "./components/header";
 @import "./components/hero";
@@ -14,4 +14,17 @@
 @import "./components/feedback";
 @import "./components/projects";
 @import "./components/works";
+@import "./components/breadcrumbs";
+@import "./components/modal";
 @import "./components/footer";
+
+// подключения компонентов страницы Контакты
+@import "components/contacts/contacts";
+
+// подключения компонентов страницы Тарифы
+@import "components/tariffs/tariffs";
+@import "components/tariffs/faq";
+
+// подключения компонентов страницы Блога
+@import "components/blog/blog";
+@import "components/blog/article";

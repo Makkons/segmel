@@ -7,7 +7,7 @@
                 </h2>
                 <p class="feedback__subtitle subtitle">от использования Segmel в вашем маркетинге</p>
             </div>
-            <form action="#" class="feedback__form form">
+            <form action="mail.php" id="feedback__form" class="feedback__form form">
                 <div class="form__body">
                     <label class="form__label">
                         <input type="text" name="Имя" class="form__input input" placeholder="Имя">
@@ -17,7 +17,9 @@
                     </label>
                     <label class="form__label checkbox">
                         <input type="checkbox" name="Согласие" class="checkbox__input" checked>
-                        <span class="checkbox__content">Cогласен с политикой обработки персональных данных</span>
+                        <span class="checkbox__content">
+                            <span class="checkbox__text">Cогласен с <a href="#" class="checkbox__link" target="_blank">политикой обработки персональных данных</a></span>
+                        </span>
                     </label>
                 </div>
                 <button class="form__button button">Хочу расчет</button>

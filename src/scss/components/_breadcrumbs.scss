@@ -1,0 +1,36 @@
+.breadcrumbs {
+  padding-bottom: rem(80);
+  @include small-tablet {
+    margin-bottom: rem(60);
+  }
+  // .breadcrumbs__container
+  &__container {
+  }
+  // .breadcrumbs__list
+  &__list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  // .breadcrumbs__item
+  &__item {
+    margin-top: rem(15);
+    &:not(:last-child) {
+      margin-right: rem(20);
+    }
+  }
+  // .breadcrumbs__link
+  &__link {
+    font-size: 14px;
+    line-height: 243%;
+    color: #728297;
+    svg {
+      width: rem(25);
+      fill: #728297;
+      margin-right: rem(15);
+    }
+  }
+  // .breadcrumbs__arrow
+  &__arrow {
+  }
+}

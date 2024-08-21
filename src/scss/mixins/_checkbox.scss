@@ -6,6 +6,7 @@
   &__input {
     appearance: none;
     position: absolute;
+    border: none !important;
     &:checked + .checkbox__content::after {
       opacity: 1;
     }

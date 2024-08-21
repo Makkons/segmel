@@ -4,6 +4,8 @@ require 'phpmailer/PHPMailer.php';
 require 'phpmailer/SMTP.php';
 require 'phpmailer/Exception.php';
 
+require 'localSettings.php';
+
 $title = "Тема письма";
 $file = $_FILES['file'];
 
@@ -32,16 +34,16 @@ try {
   $mail->SMTPAuth   = true;
 
   // Настройки вашей почты
-  $mail->Host       = 'smtp.gmail.com'; // SMTP сервера вашей почты
-  $mail->Username   = ''; // Логин на почте
-  $mail->Password   = ''; // Пароль на почте
+  $mail->Host       = 'smtp.jino.ru'; // SMTP сервера вашей почты
+  $mail->Username   = $Username; // Логин на почте
+  $mail->Password   = $Password; // Пароль на почте
   $mail->SMTPSecure = 'ssl';
   $mail->Port       = 465;
 
-  $mail->setFrom('', 'Заявка с вашего сайта'); // Адрес самой почты и имя отправителя
+  $mail->setFrom($Username, 'Заявка с вашего сайта'); // Адрес самой почты и имя отправителя
 
   // Получатель письма
-  $mail->addAddress('');
+  $mail->addAddress($addAddress);
 
   // Прикрипление файлов к письму
   if (!empty($file['name'][0])) {

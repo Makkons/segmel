@@ -43,6 +43,15 @@
     .nav .button {
       animation: show 0.3s ease-in forwards 0.3s;
     }
+    .header__wrapper {
+      &.bg-line {
+        &-center {
+          &::before {
+            border-color: var(--accent-line-color);
+          }
+        }
+      }
+    }
   }
 
   &__container {

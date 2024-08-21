@@ -35,6 +35,9 @@ a {
   //overflow: hidden; // если используете на сайте position: sticky - уберите эту настройку
   @include footerToBottom;
 }
+.main {
+  margin-top: rem(90);
+}
 header,
 section,
 footer {

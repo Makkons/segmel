@@ -3,7 +3,7 @@ import fileInclude from "gulp-file-include";
 import typograf from "gulp-typograf";
 
 export const htmlInclude = () => {
-    return app.gulp.src([`${app.paths.base.src}/*.html`])
+    return app.gulp.src([`${app.paths.base.src}/**/*.html`])
         .pipe(fileInclude({
             prefix: '@',
             basepath: '@file',

@@ -1,0 +1,104 @@
+.contacts {
+  // .contacts__container
+  &__container {
+  }
+  // .contacts__heading
+  &__heading {
+  }
+  // .contacts__body
+  &__body {
+    margin-bottom: rem(80);
+    @include small-tablet {
+      margin-bottom: rem(60);
+    }
+  }
+  // .contacts__title
+  &__title {
+  }
+  // .contacts__list
+  &__list {
+  }
+  // .contacts__item
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: rem(60) rem(10);
+    @media (max-width: rem(860)) {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: rem(60) rem(10) rem(60) rem(30);
+    }
+    @include small-tablet {
+      flex-direction: row;
+      align-items: center;
+      padding: rem(60) rem(20) rem(60) rem(50);
+    }
+    @include mobile {
+      padding: rem(60) rem(20) rem(60) rem(30);
+    }
+  }
+  // .contacts__emoji
+  &__emoji {
+    margin-right: rem(25);
+    @include tablet {
+      width: rem(85);
+      height: rem(85);
+      font-size: rem(45);
+      margin-right: rem(12);
+    }
+    @media (max-width: rem(860)) {
+      margin-right: 0;
+      margin-bottom: rem(15);
+    }
+    @include small-tablet {
+      margin-right: rem(12);
+      margin-bottom: 0;
+    }
+  }
+  // .contacts__field
+  &__field {
+  }
+  // .contacts__text
+  &__text {
+    margin: 0;
+    font-size: 14px;
+    line-height: 130%;
+    color: #728297;
+    &:not(:last-child) {
+      margin-bottom: rem(15);
+    }
+  }
+  // .contacts__link
+  &__link {
+    font-size: 16px;
+    line-height: 130%;
+    color: var(--dark-text-color);
+  }
+  // .contacts__map
+  &__map {
+    &::before {
+      bottom: rem(-1);
+    }
+  }
+
+  // .contacts__grid
+  .grid {
+    &__cell {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      @include small-tablet {
+        grid-template-columns: repeat(1, 1fr);
+      }
+      > *:not(:last-child) {
+        &::before {
+          display: none;
+          @include small-tablet {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

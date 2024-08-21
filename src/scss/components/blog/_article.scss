@@ -1,0 +1,125 @@
+.article {
+  margin-bottom: rem(80);
+  @include small-tablet {
+    margin-bottom: rem(60);
+  }
+  // .article__container
+  &__container {
+    max-width: calc(rem(800) + var(--container-offset) * 2);
+  }
+  // .article__head
+  &__head {
+    background: var(--accent-bg-color);
+    padding: rem(60) 0;
+    margin-bottom: rem(60);
+    @include small-tablet {
+      margin-bottom: rem(40);
+    }
+  }
+  // .article__time
+  &__time {
+    display: inline-block;
+    font-size: rem(14);
+    line-height: 130%;
+    text-align: center;
+    color: #728297;
+    &:not(:last-child) {
+      margin-bottom: rem(24);
+    }
+  }
+  // .article__title
+  h1.article__title {
+    margin: 0;
+    font-weight: 600;
+    font-size: rem(48);
+    line-height: 108%;
+    &:not(:last-child) {
+      margin-bottom: rem(24);
+    }
+    @include tablet {
+      font-size: 44px;
+      line-height: 118%;
+    }
+    @include small-tablet {
+      font-size: 30px;
+      line-height: 123%;
+    }
+  }
+  // .article__title
+  &__title {
+    margin: 0;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 81%;
+    &:not(:last-child) {
+      margin-bottom: rem(24);
+    }
+    @include small-tablet {
+      font-size: 20px;
+      line-height: 130%;
+    }
+  }
+
+  // .article__subtitle
+  &__subtitle {
+    margin: 0;
+    font-size: rem(24);
+    line-height: 108%;
+    &:not(:last-child) {
+      margin-bottom: 46px;
+    }
+    @include small-tablet {
+      font-size: 20px;
+      line-height: 130%;
+      &:not(:last-child) {
+        margin-bottom: 25px;
+      }
+    }
+  }
+  picture {
+    display: inline-block;
+    &:not(:last-child) {
+      margin-bottom: rem(60);
+      @include small-tablet {
+        margin-bottom: rem(40);
+      }
+    }
+  }
+  // .article__image
+  &__image {
+    width: 100%;
+    max-height: rem(440);
+    border-radius: rem(10);
+    overflow: hidden;
+    &:not(:last-child) {
+      margin-bottom: rem(60);
+      @include small-tablet {
+        margin-bottom: rem(40);
+      }
+    }
+  }
+  // .article__body
+  &__body {
+  }
+  // .article__section
+  &__section {
+    &:not(:last-child) {
+      margin-bottom: rem(60);
+      @include small-tablet {
+        margin-bottom: rem(40);
+      }
+    }
+  }
+  // .article__text
+  &__text {
+    margin: 0;
+    font-size: 16px;
+    line-height: 193%;
+    &:not(:last-child) {
+      margin-bottom: rem(15);
+      @include small-tablet {
+        margin-bottom: rem(20);
+      }
+    }
+  }
+}

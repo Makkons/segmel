@@ -4,14 +4,15 @@ import Inputmask from "../../../node_modules/inputmask/dist/inputmask.es6.js";
 export const validateForms = (selector, rules, checkboxes = [], afterSend) => {
   const form = document?.querySelector(selector);
   const telSelector = form?.querySelector('input[type="tel"]');
+  const urlAction = form?.getAttribute('action');
 
   if (!form) {
-    console.error('Нет такого селектора!');
+    // console.error('Нет такого селектора!');
     return false;
   }
 
   if (!rules) {
-    console.error('Вы не передали правила валидации!');
+    // console.error('Вы не передали правила валидации!');
     return false;
   }
 
@@ -66,7 +67,7 @@ export const validateForms = (selector, rules, checkboxes = [], afterSend) => {
       }
     }
 
-    xhr.open('POST', 'mail.php', true);
+    xhr.open('POST', urlAction, true);
     xhr.send(formData);
 
     ev.target.reset();

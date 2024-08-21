@@ -1,5 +1,5 @@
 export const isMobile = () => {
-  if (window.innerWidth < 768) {
+  if (window.innerWidth <= 680) {
     return true;
   }
 
@@ -7,7 +7,7 @@ export const isMobile = () => {
 };
 
 export const isTablet = () => {
-  if (window.innerWidth >= 769 && window.innerWidth <= 1024) {
+  if (window.innerWidth > 680 && window.innerWidth <= 960) {
     return true;
   }
 
@@ -15,7 +15,7 @@ export const isTablet = () => {
 };
 
 export const isDesktop = () => {
-  if (window.innerWidth > 1025) {
+  if (window.innerWidth > 960) {
     return true;
   }
 

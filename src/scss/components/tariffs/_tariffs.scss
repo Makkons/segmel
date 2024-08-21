@@ -1,0 +1,120 @@
+.tariffs {
+  // .tariffs__container
+  &__container {
+  }
+  // .tariffs__heading
+  &__heading {
+  }
+  // .tariffs__title
+  &__title {
+  }
+  // .tariffs__body
+  &__body {
+  }
+  // .tariffs__grid
+  &__grid {
+  }
+  // .tariffs__list
+  &__list {
+  }
+  // .tariffs__item
+  &__item {
+  }
+  // .tariffs__grid
+  .grid {
+    &__cell {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      @media (max-width: rem(1140)) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @include small-tablet {
+        grid-template-columns: repeat(1, 1fr);
+      }
+      > *:not(:last-child) {
+        &::before {
+          display: none;
+          @include small-tablet {
+            display: block;
+          }
+        }
+      }
+      > *:nth-child(even) {
+        @media (max-width: rem(1140)) {
+          border-right: none;
+        }
+      }
+      > *:nth-child(odd) {
+        &::before {
+          @media (max-width: rem(1140)) {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+.tariff {
+  padding: rem(35);
+  @include small-tablet {
+    padding: rem(30);
+  }
+  // .tariff__wrapper
+  &__wrapper {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    max-width: rem(295);
+    height: 100%;
+  }
+  // .tariff__emoji
+  &__emoji {
+    margin-bottom: rem(20);
+  }
+  // .tariff__content
+  &__content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  // .tariff__title
+  &__title {
+    margin: 0;
+    font-weight: 600;
+    font-size: rem(24);
+    line-height: 108%;
+    &:not(:last-child) {
+      margin-bottom: rem(10);
+    }
+  }
+  // .tariff__subtitle
+  &__subtitle {
+    margin: 0;
+    font-weight: 600;
+    font-size: rem(16);
+    color: var(--accent-text-color);
+    &:not(:last-child) {
+      margin-bottom: rem(25);
+    }
+  }
+  // .tariff__list
+  &__list {
+    &:not(:last-child) {
+      margin-bottom: rem(25);
+    }
+  }
+  // .tariff__item
+  &__item {
+    font-size: rem(14);
+    line-height: 130%;
+    &:not(:last-child) {
+      margin-bottom: rem(10);
+    }
+  }
+  // .tariff__button
+  &__button {
+    min-width: 0;
+    margin-top: auto;
+  }
+}

@@ -7,6 +7,8 @@ const header = document.querySelector('.header')
 
 if (window.location.pathname === '/') {
     header.classList.add('header--dark');
+} else {
+    header.classList.remove('header--dark');
 }
 
 const headerDarkTheme = header.classList.contains('header--dark');

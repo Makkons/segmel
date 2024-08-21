@@ -1,0 +1,103 @@
+.graph-modal {
+  // .graph-modal__container
+  &__container {
+    width:  rem(512);
+    padding: rem(40) rem(32);
+    border: 1px solid #C6CAD6;
+    background-color: var(--light-bg-color);
+  }
+  // .graph-modal__close
+  &__close {
+    top: rem(13);
+    right: rem(13);
+    width: rem(24);
+    height: rem(24);
+    background-image: none;
+    transition: transform 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        transform: rotate(90deg) scale(1.1);
+      }
+    }
+    &:focus {
+      outline: none;
+      transform: rotate(90deg) scale(1.1);
+    }
+    svg {
+      stroke: var(--accent-text-color);
+    }
+  }
+  // .graph-modal__content
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  // .graph-modal__title
+  &__title {
+    margin: 0;
+    width: 100%;
+    font-weight: 600;
+    font-size: rem(32);
+    line-height: 100%;
+    color: #17213b;
+    &:not(:last-child) {
+      margin-bottom: rem(32);
+    }
+  }
+  // .graph-modal__form
+  &__form {
+  }
+  // .graph-modal__body
+  &__body {
+    text-align: center;
+    &:not(:last-child) {
+      margin-bottom: rem(35);
+    }
+    .graph-modal__title {
+      font-size: rem(24);
+      &:not(:last-child) {
+        margin-bottom: rem(16);
+      }
+    }
+  }
+  // .graph-modal__text
+  &__text {
+    margin: 0;
+    font-size: rem(16);
+    line-height: 150%;
+    color: #17213B;
+    &:not(:last-child) {
+      margin-bottom: rem(16);
+    }
+  }
+  // .graph-modal__button
+  &__button {
+    min-width: rem(110);
+  }
+
+  .form {
+    // .form__body
+    &__body {
+      margin-bottom: rem(32);
+    }
+    // .form__label
+    &__label {
+      max-width: 100%;
+    }
+    // .form__input
+    &__input {
+    }
+    // .form__button
+    &__button {
+      width: 100%;
+    }
+    // .form__desc
+    &__desc {
+      margin: 0;
+      font-size: rem(14);
+      line-height: 143%;
+      color: var(--light-line-color);
+    }
+  }
+}

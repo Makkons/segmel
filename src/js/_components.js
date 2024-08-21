@@ -1,6 +1,9 @@
 import './components/header.js';
 import './components/swiper.js';
-import './components/inputMask.js';
+import './components/validateForms.js';
 import './components/smoothScroll.js';
 import './components/aos.js';
 import './components/parallax.js';
+import './components/map.js';
+import './components/accordion.js';
+import './components/loadMore.js';

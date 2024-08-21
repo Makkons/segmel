@@ -1,5 +1,6 @@
 .hero {
   background: var(--dark-bg-color);
+  margin-top: calc(var(--header-height) * -1);
   // .hero__container
   &__container {
     position: relative;
@@ -25,13 +26,19 @@
   &__title {
     padding: rem(60) 0 rem(60);
     min-height: rem(446);
-
+    font-size: rem(58);
+    line-height: 90%;
+    max-width: rem(520);
     color: var(--light-text-color);
     //margin-bottom: rem(16);
     @include tablet {
       min-height: 0;
+      font-size: rem(50);
+      line-height: 104%;
     }
     @include mobile {
+      font-size: rem(32);
+      line-height: 116%;
       padding: rem(40) 0 0;
       margin-bottom: rem(16);
       &.bg-line-bottom {
@@ -151,15 +158,18 @@
   }
   // .hero__swiper
   &__swiper {
-    margin: 0 rem(-40);
+    margin: 0 rem(-39);
     padding: rem(80) 0 rem(146);
+    @include big-desktop {
+      margin-right: rem(72);
+    }
     @include tablet {
-      margin: 0 rem(-30);
-      margin-right: rem(80);
+      margin: 0 rem(-29);
+      margin-right: rem(81);
       padding: rem(60) 0 rem(100);
     }
     @include small-tablet {
-      margin: 0 rem(-30) 0 rem(-15);
+      margin: 0 rem(-30) 0 rem(-14);
     }
     @include mobile {
       padding: rem(45) 0 rem(90);
@@ -168,9 +178,6 @@
       bottom: rem(80);
       @include tablet {
         bottom: rem(50);
-      }
-      @include mobile {
-        bottom: rem(60);
       }
     }
     .swiper-slide {
