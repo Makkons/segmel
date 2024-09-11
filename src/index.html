@@ -1,27 +1,21 @@
 <!DOCTYPE html>
 <html lang="ru" class="page">
+   @include('partials/head.html', { "getApiMap": "", })
 
-@include('partials/head.html', {
-  "getApiMap": "",
-})
-
-<body class="page__body">
-  <div class="site-container">
-    @include('partials/header.html', {
-      "headerClassName": "header--dark"
-    })
-    <main id="main" class="main">
-      @include('partials/hero.html')
-      @include('partials/benefits.html')
-      @include('partials/offers.html')
-      @include('partials/steps.html')
-      @include('partials/feedback.html')
-      @include('partials/projects.html')
-      @include('partials/works.html')
-      @include('partials/modal.html')
-    </main>
-    @include('partials/footer.html')
-  </div>
-</body>
-
+   <body class="page__body">
+      <div class="site-container">
+         @include('partials/header.html', { "headerClassName": "header--dark" })
+         <main id="main" class="main">
+            @include('partials/hero.html')
+            @include('partials/benefits.html')
+            @include('partials/offers.html')
+            @include('partials/steps.html')
+            @include('partials/feedback.html')
+            @include('partials/projects.html')
+            @include('partials/works.html')
+            @include('partials/modal.html')
+         </main>
+         @include('partials/footer.html')
+      </div>
+   </body>
 </html>

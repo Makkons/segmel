@@ -4,8 +4,9 @@ import { getScrollBarWidth } from '../functions/scrollBar-width.js';
 import { throttle } from '../functions/throttle.js';
 
 const header = document.querySelector('.header')
+const hero = document.querySelector('.hero')
 
-if (window.location.pathname === '/') {
+if (hero) {
     header.classList.add('header--dark');
 } else {
     header.classList.remove('header--dark');

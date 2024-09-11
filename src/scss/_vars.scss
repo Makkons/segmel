@@ -7,6 +7,8 @@
   --container-offset: calc(35 / 16 * 1rem);
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
 
+  --scroll-bar-width: 0px;
+
   // colors
   --dark-bg-color: #1D1B1F;
   --light-bg-color: #E7ECF9;

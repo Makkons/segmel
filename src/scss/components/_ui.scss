@@ -637,7 +637,10 @@ h3.title {
 
     .card__text {
       &:first-child {
-        margin-right: rem(10);
+        margin-right: rem(20);
+      }
+      &:last-child {
+        text-align: right;
       }
     }
   }
